@@ -22,15 +22,15 @@ function App() {
   const [apiKey, setApiKey] = useState('')
 
 const getScore = () =>{
-  // axios.get('https://ping-pong-score.herokuapp.com/get_score/')
-  axios.get('http://127.0.0.1:8000/get_score/')
+  axios.get('https://ping-pong-score.herokuapp.com/get_score/')
+  // axios.get('http://127.0.0.1:8000/get_score/')
   .then(res => setTableData(res.data))
   .catch()
 }
 
 const getGraphData = () =>{
-  // axios.get('https://ping-pong-score.herokuapp.com/get_graph_data/')
-  axios.get('http://127.0.0.1:8000/get_graph_data/')
+  axios.get('https://ping-pong-score.herokuapp.com/get_graph_data/')
+  // axios.get('http://127.0.0.1:8000/get_graph_data/')
   .then((res) => {
     let gamesData = [
       {
@@ -55,7 +55,7 @@ const getGraphData = () =>{
 }
 const getCurrentSession = () =>{
   // axios.get('https://ping-pong-score.herokuapp.com/get_graph_data/')
-  axios.get('http://127.0.0.1:8000/get_current_session/')
+  axios.get('https://ping-pong-score.herokuapp.com/get_current_session/')
   .then(res => {
     setCurrentSession(res.data)
   })
@@ -76,7 +76,7 @@ const getCurrentSession = () =>{
       let data = {
         date: new Date().toISOString().slice(0,10)
       }
-      axios.post(`http://127.0.0.1:8000/session/?apiKey=${apiKey}`, data)
+      axios.post(`https://ping-pong-score.herokuapp.com/session/?apiKey=${apiKey}`, data)
       .then((res) => {
         setCurrentSession(res.data)
 
@@ -94,7 +94,7 @@ const getCurrentSession = () =>{
       vibhu_score: vibhuScore,
       dad_score: dadScore,
     }
-    axios.post(`http://127.0.0.1:8000/game/?apiKey=${apiKey}`, data)
+    axios.post(`https://ping-pong-score.herokuapp.com/game/?apiKey=${apiKey}`, data)
     .then((res) => {
       setVibhuScore(0)
       setDadScore(0)
