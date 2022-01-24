@@ -15,7 +15,7 @@ function App() {
   const [tableData, setTableData] = useState([])
   const [gamesGraphData, setGamesGraphData] = useState({})
   const [pointsGraphData, setPointsGraphData] = useState({})
-
+ 
   const [currentSession, setCurrentSession] = useState({})
   const [vibhuScore, setVibhuScore] = useState(0)
   const [dadScore, setDadScore] = useState(0)
